@@ -35,7 +35,7 @@ if(generaElement != null) {
                 <td>Biglietto standard</td>
                 <td>5</td>
                 <td>92911</td>
-                <td class="price">${prezzoFinale} €</td>
+                <td class="price">${prezzoFinale.toFixed(2, 0)} €</td>
             </tr>`
         }
     });
