@@ -43,6 +43,10 @@ input[type="submit"] {
     background-color: var(--grey);
 }
 
+input[type="submit"].annulla {
+    border: 1px solid var(--grey-dark);
+}
+
 select option {
     text-align: left;
 }
