@@ -1,11 +1,6 @@
 const generaElement = document.querySelector('input[name="genera"]');
 const annullaElement = document.querySelector('input[name="annulla"]');
 
-let sconto = 0,
-prezzoBase,
-prezzoFinale;
-
-
 if(generaElement != null) {
     generaElement.addEventListener('click', function() {
         const nome = document.querySelector('.ticket-form .name').value;
@@ -14,7 +9,11 @@ if(generaElement != null) {
         const priceTableElement = document.querySelector('.ticket-info__table tbody');
         const nameElement = document.querySelector('.ticket-price .user .name');
 
-        var matches = nome.match(/\d+/g);
+        let sconto = 0,
+            prezzoBase,
+            prezzoFinale;
+
+        let matches = nome.match(/\d+/g);
         
         if (matches != null) {
             alert('Il campo Nome e Cognome non deve contenere numeri');
@@ -42,6 +41,7 @@ if(generaElement != null) {
 }
 if(annullaElement != null) {
     annullaElement.addEventListener('click', function() {
+        // svuoto tabella prezzo biglietto
         const priceTableElement = document.querySelector('.ticket-info__table tbody');
         priceTableElement.innerHTML = 
         `<tr>
@@ -49,6 +49,10 @@ if(annullaElement != null) {
             <th>Carrozza</th>
             <th>Codice CP</th>
             <th>Costo biglietto</th>
-        </tr>`
+        </tr>`;
+
+        // svuoto paragrafo nome e cognome
+        const nameElement = document.querySelector('.ticket-price .user .name');
+        nameElement.innerHTML = "";
     });
 }
