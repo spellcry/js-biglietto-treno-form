@@ -14,22 +14,33 @@
 <body>
 
     <main class="main-content">
-        <section class="ticket-form">
-            <h1 class="main-content__title">Calcola il prezzo del tuo biglietto</h1>
-            <div class="form">
-                <input type="text" class="name" name="name">
-                <input type="text" class="distanza" name="distanza">
-                <select name="eta" class="eta">
-                    <option value="minorenne">Minorenne</option>
-                    <option value="maggiorenne" selected>Maggiorenne</option>
-                    <option value="oversessantacinque">Over 65</option>
-                </select>
-                <input type="submit" name="genera" value="Genera">
-                <input type="submit" name="annulla" value="Annulla">
+        <section class="ticket">
+            <div class="ticket-form">
+                <h1 class="main-content__title title">Calcola il prezzo del tuo biglietto</h1>
+                <div class="form">
+                    <div class="name-group">
+                        <label for="name">Nome Cognome</label>
+                        <input type="text" id="name" class="name" name="name">
+                    </div>
+                    <div class="distanza-group">
+                        <label for="distanza">Km da percorrere</label>
+                        <input type="text" id="distanza" class="distanza" name="distanza">
+                    </div>
+                    <div class="eta-group">
+                        <label for="eta">Fascia d'età</label>
+                        <select name="eta" id="eta" class="eta">
+                            <option value="minorenne">Minorenne</option>
+                            <option value="maggiorenne" selected>Maggiorenne</option>
+                            <option value="oversessantacinque">Over 65</option>
+                        </select>
+                    </div>
+                    <div class="cta-group">
+                        <input type="submit" name="genera" value="Genera">
+                        <input type="submit" name="annulla" value="Annulla">
+                    </div>
+                </div>
             </div>
-        </section>
-        <section class="ticketPrice">
-            <div class="users">
+            <div class="ticket-price">
                 <h2 class="title">Il tuo biglietto</h2>
                 <div class="details">
                     <h3 class="title">Dettaglio passeggeri</h3>

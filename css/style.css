@@ -1,3 +1,12 @@
+/* #region Variabili */
+:root {
+    --color: #B91450;
+    --accent: #E4934B;
+    --grey: #CCCCCC;
+}
+
+/* #endregion Variabili */
+
 /* #region Regole Reset */
 * {
     box-sizing: border-box;
@@ -5,8 +14,107 @@
     padding: 0;
 }
 
+body {
+    font-family: sans-serif;
+}
+
 table {
     text-align: left;
 }
 
+input,
+select {
+    padding-block: 0.5rem;
+    border: 1px solid var(--color);
+    border-radius: 5px;
+    text-align: center;
+}
+
+input[type="submit"] {
+    padding-inline: 0.5rem;
+    border: 1px solid var(--accent);
+    color: var(--color);
+    background-color: var(--grey);
+}
+
+select option {
+    text-align: left;
+}
+
 /* #endregion Regole Reset */
+
+/* #region Utility */
+.title {
+    text-transform: uppercase;
+}
+
+/* #endregion Utility */
+
+/* #region Main Content */
+.main-content {
+    height: 100vh;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color);
+}
+
+.ticket-form {
+    margin-bottom: 1.25rem;
+}
+
+.ticket-form .form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.25rem;
+    background-color: #fff;
+    color: var(--color);
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, .30);
+}
+
+.name-group,
+.distanza-group,
+.eta-group {
+    flex-basis: calc(100% / 3);
+    text-align: center;
+}
+
+.cta-group {
+    padding-top: 2rem;
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.ticket-form .title,
+.ticket-price>.title {
+    color: #fff;
+    text-align: center;
+}
+
+.ticket-form .title {
+    padding-bottom: 1.25rem;
+}
+
+.ticket-form label {
+    display: block;
+    margin-bottom: 1.25rem;
+}
+
+.ticket {
+    max-width: 836px;
+    margin-inline: auto;
+}
+
+.ticket-price .details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ticket-price .details .title {
+    flex-basis: 100%;
+}
+
+/* #endregion Main Content */

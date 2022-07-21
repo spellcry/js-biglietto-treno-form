@@ -11,7 +11,7 @@ if(generaElement != null) {
         const distanza = parseFloat(document.querySelector('.ticket-form .distanza').value);
         const eta = document.querySelector('select[name="eta"]').value;
         const priceTableElement = document.querySelector('.ticket-info__table tbody');
-        const nameElement = document.querySelector('.ticketPrice .user .name');
+        const nameElement = document.querySelector('.ticket-price .user .name');
 
         var matches = nome.match(/\d+/g);
         
