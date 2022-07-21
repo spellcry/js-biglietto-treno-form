@@ -3,6 +3,7 @@
     --color: #B91450;
     --accent: #E4934B;
     --grey: #CCCCCC;
+    --grey-dark: #808080;
 }
 
 /* #endregion Variabili */
@@ -19,7 +20,12 @@ body {
 }
 
 table {
+    border-spacing: 1.25rem 1rem;
     text-align: left;
+}
+
+table th {
+    padding-bottom: 1rem;
 }
 
 input,
@@ -61,6 +67,9 @@ select option {
     background-color: var(--color);
 }
 
+/* #endregion Main Content */
+
+/* #region Ticket Form */
 .ticket-form {
     margin-bottom: 1.25rem;
 }
@@ -117,4 +126,31 @@ select option {
     flex-basis: 100%;
 }
 
-/* #endregion Main Content */
+/* #endregion Ticket Form */
+
+/* #region Ticket Price */
+.ticket-price .title {
+    margin-bottom: 0.25rem;
+}
+
+.ticket-price .details {
+    padding: 1.25rem;
+    background-color: #fff;
+}
+
+.ticket-price .user {
+    padding: 1.25rem;
+    background-color: var(--grey-dark);
+}
+
+.ticket-price .name {
+    font-weight: bold;
+}
+
+.ticket-info {
+    flex-grow: 1;
+    border-top: 1px solid var(--grey-dark);
+    border-bottom: 1px solid var(--grey-dark);
+}
+
+/* #endregion Ticket Price */
