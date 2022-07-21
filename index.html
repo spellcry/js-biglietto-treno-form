@@ -14,17 +14,43 @@
 <body>
 
     <main class="main-content">
-        <h1 class="main-content__title">Calcola il prezzo del tuo biglietto</h1>
         <section class="ticket-form">
-            <input type="text" class="name" name="name">
-            <input type="text" class="distanza" name="distanza">
-            <select name="eta" class="eta">
-                <option value="minorenne">Minorenne</option>
-                <option value="maggiorenne" selected>Maggiorenne</option>
-                <option value="oversessantacinque">Over 65</option>
-            </select>
-            <input type="submit" name="genera" value="Genera">
-            <input type="submit" name="annulla" value="Annulla">
+            <h1 class="main-content__title">Calcola il prezzo del tuo biglietto</h1>
+            <div class="form">
+                <input type="text" class="name" name="name">
+                <input type="text" class="distanza" name="distanza">
+                <select name="eta" class="eta">
+                    <option value="minorenne">Minorenne</option>
+                    <option value="maggiorenne" selected>Maggiorenne</option>
+                    <option value="oversessantacinque">Over 65</option>
+                </select>
+                <input type="submit" name="genera" value="Genera">
+                <input type="submit" name="annulla" value="Annulla">
+            </div>
+        </section>
+        <section class="ticketPrice">
+            <div class="users">
+                <h2 class="title">Il tuo biglietto</h2>
+                <div class="details">
+                    <h3 class="title">Dettaglio passeggeri</h3>
+                    <div class="user">
+                        <h4 class="title user__name">Nome passeggero</h4>
+                        <p class="name"></p>
+                    </div>
+                    <div class="ticket-info">
+                        <table class="ticket-info__table">
+                            <tbody>
+                                <tr>
+                                    <th>Offerta</th>
+                                    <th>Carrozza</th>
+                                    <th>Codice CP</th>
+                                    <th>Costo biglietto</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 

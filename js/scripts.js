@@ -10,7 +10,11 @@ if(generaElement != null) {
         const nome = document.querySelector('.ticket-form .name').value;
         const distanza = parseFloat(document.querySelector('.ticket-form .distanza').value);
         const eta = document.querySelector('select[name="eta"]').value;
+        const priceTableElement = document.querySelector('.ticket-info__table tbody');
+        const nameElement = document.querySelector('.ticketPrice .user .name');
+
         var matches = nome.match(/\d+/g);
+        
         if (matches != null) {
             alert('Il campo Nome e Cognome non deve contenere numeri');
         } else if(isNaN(distanza)) {
@@ -23,7 +27,15 @@ if(generaElement != null) {
             } else if(eta === 'oversessantacinque') {
                 sconto = prezzoBase * 0.4;
             }
+            nameElement.append(nome);
             prezzoFinale = prezzoBase - sconto;
+            priceTableElement.innerHTML +=
+            `<tr>
+                <td>Biglietto standard</td>
+                <td>5</td>
+                <td>92911</td>
+                <td class="price">${prezzoFinale} €</td>
+            </tr>`
         }
     });
 }
