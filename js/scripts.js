@@ -1,4 +1,5 @@
 const generaElement = document.querySelector('input[name="genera"]');
+const annullaElement = document.querySelector('input[name="annulla"]');
 
 let sconto = 0,
 prezzoBase,
@@ -27,7 +28,7 @@ if(generaElement != null) {
             } else if(eta === 'oversessantacinque') {
                 sconto = prezzoBase * 0.4;
             }
-            nameElement.append(nome);
+            nameElement.innerHTML=nome;
             prezzoFinale = prezzoBase - sconto;
             priceTableElement.innerHTML +=
             `<tr>
@@ -37,5 +38,17 @@ if(generaElement != null) {
                 <td class="price">${prezzoFinale} €</td>
             </tr>`
         }
+    });
+}
+if(annullaElement != null) {
+    annullaElement.addEventListener('click', function() {
+        const priceTableElement = document.querySelector('.ticket-info__table tbody');
+        priceTableElement.innerHTML = 
+        `<tr>
+            <th>Offerta</th>
+            <th>Carrozza</th>
+            <th>Codice CP</th>
+            <th>Costo biglietto</th>
+        </tr>`
     });
 }
