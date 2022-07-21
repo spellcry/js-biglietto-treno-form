@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biglietto del treno</title>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <main class="main-content">
+        <h1 class="main-content__title">Calcola il prezzo del tuo biglietto</h1>
+        <section class="ticket-form">
+            <input type="text" class="name" name="name">
+            <input type="text" class="distanza" name="distanza">
+            <select name="eta" class="eta">
+                <option value="minorenne">Minorenne</option>
+                <option value="maggiorenne" selected>Maggiorenne</option>
+                <option value="oversessantacinque">Over 65</option>
+            </select>
+            <input type="submit" name="genera" value="Genera">
+            <input type="submit" name="annulla" value="Annulla">
+        </section>
+    </main>
+
+    <script type="text/javascript" src="./js/scripts.js"></script>
+</body>
+
+</html>
