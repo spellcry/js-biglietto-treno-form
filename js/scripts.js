@@ -51,9 +51,5 @@ if(annullaElement != null) {
         nomeElement.value = "";
         distanzaElement.value = "";
         etaElement.value = "maggiorenne";
-
-        // svuoto paragrafo nome e cognome
-        const nameElement = document.querySelector('.ticket-price .user .name');
-        nameElement.innerHTML = "";
     });
 }
