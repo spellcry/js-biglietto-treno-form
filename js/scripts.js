@@ -1,17 +1,21 @@
 const generaElement = document.querySelector('input[name="genera"]');
 const annullaElement = document.querySelector('input[name="annulla"]');
+const nomeElement = document.querySelector('.ticket-form .name');
+const distanzaElement = document.querySelector('.ticket-form .distanza');
+const etaElement = document.querySelector('select[name="eta"]');
 
 if(generaElement != null) {
     generaElement.addEventListener('click', function() {
-        const nome = document.querySelector('.ticket-form .name').value;
-        const distanza = parseFloat(document.querySelector('.ticket-form .distanza').value);
-        const eta = document.querySelector('select[name="eta"]').value;
+        const nome = nomeElement.value;
+        const distanza = parseFloat(distanzaElement.value);
+        const eta = etaElement.value;
         const priceTableElement = document.querySelector('.ticket-info__table tbody');
         const nameElement = document.querySelector('.ticket-price .user .name');
 
         let sconto = 0,
             prezzoBase,
-            prezzoFinale;
+            prezzoFinale,
+            tipoBiglietto = 'Biglietto standard';
 
         let matches = nome.match(/\d+/g);
         
@@ -24,14 +28,16 @@ if(generaElement != null) {
             prezzoBase = 0.21 * distanza;
             if(eta === 'minorenne') {
                 sconto = prezzoBase * 0.2;
+                tipoBiglietto = 'Biglietto ridotto minori';
             } else if(eta === 'oversessantacinque') {
                 sconto = prezzoBase * 0.4;
+                tipoBiglietto = 'Biglietto ridotto over 65';
             }
             nameElement.innerHTML=nome;
             prezzoFinale = prezzoBase - sconto;
             priceTableElement.innerHTML +=
             `<tr>
-                <td>Biglietto standard</td>
+                <td>${tipoBiglietto}</td>
                 <td>5</td>
                 <td>92911</td>
                 <td class="price">${prezzoFinale.toFixed(2, 0)} €</td>
@@ -41,15 +47,10 @@ if(generaElement != null) {
 }
 if(annullaElement != null) {
     annullaElement.addEventListener('click', function() {
-        // svuoto tabella prezzo biglietto
-        const priceTableElement = document.querySelector('.ticket-info__table tbody');
-        priceTableElement.innerHTML = 
-        `<tr>
-            <th>Offerta</th>
-            <th>Carrozza</th>
-            <th>Codice CP</th>
-            <th>Costo biglietto</th>
-        </tr>`;
+        // azzerro campi input
+        nomeElement.value = "";
+        distanzaElement.value = "";
+        etaElement.value = "maggiorenne";
 
         // svuoto paragrafo nome e cognome
         const nameElement = document.querySelector('.ticket-price .user .name');
